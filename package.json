@@ -1,0 +1,37 @@
+{
+    "name": "@rhinojs/web-apps-code",
+    "description": "rhinoJS Web Apps Core",
+    "version": "0.1.0",
+    "keywords": [
+        "rhinojs",
+        "framework",
+        "web",
+        "apps",
+        "core"
+    ],
+    "contributors": [
+        "Bruno Gonçalves",
+        "Tiago Gonçalves"
+    ],
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:rhinoJS/web.apps.core.git"
+    },
+    "main": "./dist/index.js",
+    "scripts": {
+        "clean": "rimraf ./dist",
+        "build": "npm run clean && cross-env NODE_ENV=production webpack --mode production --progress --hide-modules"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "babel-loader": "^8.0.6",
+        "cross-env": "^7.0.2",
+        "rimraf": "^3.0.0",
+        "webpack": "^4.39.2",
+        "webpack-cli": "^3.3.7",
+        "webpack-dev-server": "^3.8.0",
+        "vue-cookie": "^1.1.4"
+    }
+}
