@@ -33,5 +33,7 @@
         "webpack-cli": "^3.3.7",
         "webpack-dev-server": "^3.8.0",
         "vue-cookie": "^1.1.4"
-    }
+    },
+
+    "publishConfig": { "registry": "https://npm.pkg.github.com/bugotech" }
 }
