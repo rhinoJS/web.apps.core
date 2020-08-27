@@ -10,7 +10,7 @@ class StoreProvider
      */
     constructor (provider, crypto = null) {
         this.$provider = provider;
-        this.$crypto = (crypto == null) ? Crypto.noCrypto : crypto;
+        this.$crypto = (crypto == null) ? Crypto.noCrypto() : crypto;
     }
 
     /**
