@@ -8,12 +8,12 @@ class Store
     /**
      * Construtor.
      * 
-     * @param {Object} cripto Objeto de criptografia caso precisa mascarar.
+     * @param {Object} crypto Objeto de criptografia caso precisa mascarar.
      */
-    constructor (cripto = null) {
-        this.local   = StoreProvider(new LocalProvider(), cripto);
-        this.cookie  = StoreProvider(new CookieProvider(), cripto);
-        this.session = StoreProvider(new SessionProvider(), cripto);
+    constructor (crypto = null) {
+        this.local   = new StoreProvider(new LocalProvider(), crypto);
+        this.cookie  = new StoreProvider(new CookieProvider(), crypto);
+        this.session = new StoreProvider(new SessionProvider(), crypto);
     }
 
     /**

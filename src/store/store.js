@@ -6,11 +6,11 @@ class StoreProvider
      * Construtor.
      * 
      * @param {Object} provider Objeto provider para manipulacao
-     * @param {Object} cripto Objeto de criptografia caso precisa mascarar.
+     * @param {Object} crypto Objeto de criptografia caso precisa mascarar.
      */
-    constructor (provider, cripto = null) {
+    constructor (provider, crypto = null) {
         this.$provider = provider;
-        this.$cripto = (cripto == null) ? Crypto.noCrypto : cripto;
+        this.$crypto = (crypto == null) ? Crypto.noCrypto : crypto;
     }
 
     /**
@@ -35,7 +35,7 @@ class StoreProvider
 
         // Passar o valor pelo cripto
         if (value) {
-            value = this.$cripto.decrypt(value);
+            value = this.$crypto.decrypt(value);
         }
 
         return value ? value : def;
@@ -50,7 +50,7 @@ class StoreProvider
     set(key, value) {
 
         // Passar valor pelo cripto
-        value = this.$cripto.encrypt(value);
+        value = this.$crypto.encrypt(value);
 
         this.$provider.set(key, value);
     };

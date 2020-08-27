@@ -1,7 +1,7 @@
 {
     "name": "@rhinojs/web-apps-code",
     "description": "rhinoJS Web Apps Core",
-    "version": "0.1.1",
+    "version": "0.1.7",
     "keywords": [
         "rhinojs",
         "framework",
@@ -18,7 +18,7 @@
         "type": "git",
         "url": "git@github.com:rhinoJS/web.apps.core.git"
     },
-    "main": "./dist/index.js",
+    "main": "./src/index.js",
     "scripts": {
         "clean": "rimraf ./dist",
         "build": "npm run clean && cross-env NODE_ENV=production webpack --mode production --progress --hide-modules"
@@ -33,7 +33,5 @@
         "webpack-cli": "^3.3.7",
         "webpack-dev-server": "^3.8.0",
         "vue-cookie": "^1.1.4"
-    },
-
-    "publishConfig": { "registry": "https://npm.pkg.github.com/bugotech" }
+    }
 }
