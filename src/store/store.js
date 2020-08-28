@@ -46,13 +46,15 @@ class StoreProvider
      * 
      * @param {string} key Nome da chave
      * @param {mixed} value Valor a guardar
+     * @param {mixed} opts Options do set
+     * 
      */
-    set(key, value) {
+    set(key, value, opts = null) {
 
         // Passar valor pelo cripto
         value = this.$crypto.encrypt(value);
 
-        this.$provider.set(key, value);
+        this.$provider.set(key, value, opts);
     };
 
     /**
