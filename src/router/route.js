@@ -7,10 +7,11 @@ class RouteMaker
         this.$title     = title;
 
         // Opcionais
-        this.$component  = null;
-        this.$auth       = false;
-        this.$guest      = false;
-        this.$toUrl      = null;
+        this.$component        = null;
+        this.$auth             = false;
+        this.$guest            = false;
+        this.$toUrl            = null;
+        this.$toUrlIncludePath = false;
     }
 
     /**
@@ -85,10 +86,12 @@ class RouteMaker
      * Atribuir se rota faz redirect para url externa.
      * 
      * @param {String} url Url externa
+     * @param {Boolean} includePath Se deve incluir o fullpath no destino
      * @returns {Object}
      */
-    toUrl(url) {
+    toUrl(url, includePath = false) {
         this.$toUrl = url;
+        this.$toUrlIncludePath = includePath;
 
         return this.make();
     }
@@ -122,7 +125,9 @@ class RouteMaker
             route.beforeEnter = (to, from) => {
 
                 var url = $this.$toUrl;
-                url += to.fullPath;
+                if ($this.$toUrlIncludePath) {
+                    url += to.fullPath;
+                }
 
                 location.href = url;
             };

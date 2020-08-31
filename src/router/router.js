@@ -22,10 +22,11 @@ class RouterMake
      * @param {String} url Url destino
      * @param {Boolean} auth Ativa ou nao auth
      * @param {Boolean} guest Ativa ou nao guest
+     * @param {Boolean} includePath Se deve incluir o fullpath no destino
      * @returns {Object}
      */
-    toUrl(path, name, url, auth = false, guest = false) {
-        return this.make(path, name).auth(auth).guest(guest).toUrl(url);
+    toUrl(path, name, url, auth = false, guest = false, includePath = false) {
+        return this.make(path, name).auth(auth).guest(guest).toUrl(url, includePath);
     }
 
     /**
@@ -36,7 +37,7 @@ class RouterMake
      * @returns {Object}
      */
     error404ToUrl(url, name = 'error.404') {
-        return this.make('*', name).toUrl(url);
+        return this.make('*', name).toUrl(url, true);
     }
 
     /**
@@ -46,8 +47,8 @@ class RouterMake
      * @param {String} name Nome da rota
      * @returns {Object}
      */
-    error404(component, name = 'error.404') {
-        return this.make('*', name).vue(component);
+    error404(component, name = 'error.404', title = '404') {
+        return this.make('*', name).title(title).vue(component);
     }
 }
 
