@@ -44,10 +44,11 @@ class RouterMake
      * Redirecionar erros para uma url.
      * 
      * @param {Object} component Componente view do erro
+     * @param {String} title Titulo da pagina
      * @param {String} name Nome da rota
      * @returns {Object}
      */
-    error404(component, name = 'error.404', title = '404') {
+    error404(component, title = '404', name = 'error.404') {
         return this.make('*', name).title(title).vue(component);
     }
 }
