@@ -22,8 +22,8 @@ class Store
      * @param {Vue} Instancia do Vue
      */
     install(Vue) {
-        Vue.prototype.$store = this;
-        Vue.store = this;
+        Vue.prototype.$storage = this;
+        Vue.storage = this;
     }
 };
 
