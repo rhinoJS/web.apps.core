@@ -50,9 +50,10 @@ class AuthProvider
      * 
      * @param {String} email E-mail do login
      * @param {String} senha Senha do login
+     * @param {String} inquilino NS do inquilino
      * @returns {Object}
      */
-    async login(email, senha) {
+    async login(email, senha, inquilino) {
         return;
     }
 
@@ -70,9 +71,10 @@ class AuthProvider
      * 
      * @param {String} email E-mail do usuario
      * @param {String} url URL para o reset
+     * @param {String} inquilino NS do inquilino
      * @returns {Object}
      */
-    async forgotPassword(email, url)
+    async forgotPassword(email, url, inquilino)
     {
         return;
     }
