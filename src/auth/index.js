@@ -70,11 +70,12 @@ class Auth
      * @param {String} email E-mail do login
      * @param {String} senha Senha do login
      * @param {Boolean} remember Define se deve guardar email do usuario
+     * @param {String} inquilino ns do inquilino
      * @returns {Object}
      */
-    async login(email, senha, remember)
+    async login(email, senha, remember, inquilino)
     {
-        var ret = await this.$provider.login(email, senha);
+        var ret = await this.$provider.login(email, senha, inquilino);
 
         // Guardar accesToken na sessao
         this.$provider.setAccessToken(ret.access_token);
@@ -113,11 +114,12 @@ class Auth
      * 
      * @param {String} email E-mail do usuario
      * @param {String} url URL para o reset
+     * @param {String} inquilino NS do inquilino
      * @returns {Object}
      */
-    async forgotPassword(email, url)
+    async forgotPassword(email, url, inquilino)
     {
-        return await this.$provider.forgotPassword(email, url);
+        return await this.$provider.forgotPassword(email, url, inquilino);
     }
 
     /**
