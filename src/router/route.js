@@ -77,12 +77,7 @@ class RouteMaker
      * @returns {Object}
      */
     component(value) {
-        // Verificar se é uma promessa para lazyload e tranformar em function
-        if ((typeof value == 'object') && (value.constructor.name == 'Promise')) {
-            this.component = () => value;
-        } else {
-            this.$component = value;
-        }
+        this.$component = value;
 
         return this.make();
     }
