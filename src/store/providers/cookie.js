@@ -38,14 +38,15 @@ class Cookie extends Provider
     set(key, value, opts) {
         VueCookie.set(key, value, opts);
     };
-
+    
     /**
      * Remover valor no store.
      * 
      * @param {string} key Nome da chave
+     * @param {mixed} opts Options do set
      */
-    remove(key) {
-        VueCookie.delete(key);
+    remove(key, opts) {
+        VueCookie.delete(key, opts);
     };
 };
 
